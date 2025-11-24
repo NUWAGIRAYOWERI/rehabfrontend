@@ -1,0 +1,70 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A beautiful sunrise seen through trees, representing hope and new beginnings.",
+      "imageUrl": "https://images.unsplash.com/photo-1668446939738-8f40abd229c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdW5yaXNlJTIwdHJlZXN8ZW58MHx8fHwxNzU5NTg2MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sunrise trees"
+    },
+    {
+      "id": "lymphedema-therapy",
+      "description": "A therapist performing manual lymphatic drainage on a patient's arm.",
+      "imageUrl": "https://images.unsplash.com/photo-1696881694567-cd1a97958fc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnZW50bGUlMjB0aGVyYXB5fGVufDB8fHx8MTc1OTU4NjAzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gentle therapy"
+    },
+    {
+      "id": "stroke-rehab",
+      "description": "A stroke survivor relearning to walk with the help of a physiotherapist.",
+      "imageUrl": "https://images.unsplash.com/photo-1592389209483-02dea6bc5a4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxyZWhhYmlsaXRhdGlvbiUyMHdhbGtpbmd8ZW58MHx8fHwxNzU5NTg2MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "rehabilitation walking"
+    },
+    {
+      "id": "orthopedic-rehab",
+      "description": "Patient doing leg exercises with a resistance band for orthopedic recovery.",
+      "imageUrl": "https://images.unsplash.com/photo-1545463913-5083aa7359a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwaHlzaW90aGVyYXB5JTIwZXhlcmNpc2V8ZW58MHx8fHwxNzU5NTQwODgwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "physiotherapy exercise"
+    },
+    {
+      "id": "children-therapy",
+      "description": "A child in a playful therapy session, developing motor skills.",
+      "imageUrl": "https://images.unsplash.com/photo-1576670262762-de61b90aabf4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZCUyMHRoZXJhcHl8ZW58MHx8fHwxNzU5NTg2MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "child therapy"
+    },
+    {
+      "id": "back-pain-care",
+      "description": "Therapist assisting a patient with a gentle back stretch.",
+      "imageUrl": "https://images.unsplash.com/photo-1620939068789-fc0c88ddb71e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiYWNrJTIwcGFpbnxlbnwwfHx8fDE3NTk1ODYwMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "back pain"
+    },
+    {
+      "id": "wound-care",
+      "description": "A nurse carefully dressing a chronic wound on a patient's leg.",
+      "imageUrl": "https://images.unsplash.com/photo-1624727828489-a1e03b79bba8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwY2FyZXxlbnwwfHx8fDE3NTk1ODYwMzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical care"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of a smiling middle-aged man.",
+      "imageUrl": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzbWlsaW5nJTIwbWFufGVufDB8fHx8MTc1OTU4MDk1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smiling man"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of a hopeful senior woman.",
+      "imageUrl": "https://images.unsplash.com/photo-1542466131-3f5813d6a04d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxob3BlZnVsJTIwd29tYW58ZW58MHx8fHwxNzU5NTg2MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hopeful woman"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of a young woman looking confident.",
+      "imageUrl": "https://images.unsplash.com/photo-1678801869142-488f27d9b42a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29uZmlkZW50JTIwd29tYW58ZW58MHx8fHwxNzU5NTg2MDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "confident woman"
+    },
+    {
+      "id": "map-placeholder",
+      "description": "A placeholder image of a map showing a location.",
+      "imageUrl": "https://images.unsplash.com/photo-1717700299581-c2fc3fad4ee8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaXR5JTIwbWFwfGVufDB8fHx8MTc1OTQ4MjkxMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    }
+  ]
+}

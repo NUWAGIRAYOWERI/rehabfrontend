@@ -1,0 +1,8 @@
+{
+  "/contact/page": "app/contact/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/page": "app/page.js",
+  "/patient-resources/page": "app/patient-resources/page.js",
+  "/testimonials/page": "app/testimonials/page.js"
+}
