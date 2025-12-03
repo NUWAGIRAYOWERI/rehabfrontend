@@ -22,14 +22,7 @@ export default function GalleryPage() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await axios.get(
-          "https://rehabserver.onrender.com/gallery",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const res = await axios.get(`${API_URL}/gallery`);
         setGalleryImages(res.data);
       } catch (err) {
         console.error("❌ Error fetching gallery:", err);
@@ -37,6 +30,7 @@ export default function GalleryPage() {
         setLoading(false);
       }
     };
+
     fetchGallery();
   }, []);
 
