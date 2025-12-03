@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -19,11 +19,14 @@ export default function GalleryPage() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/gallery", {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const res = await axios.get(
+          "https://rehabserver.onrender.com/gallery",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         setGalleryImages(res.data);
       } catch (err) {
         console.error("❌ Error fetching gallery:", err);
@@ -72,7 +75,7 @@ export default function GalleryPage() {
                         src={
                           image.image_url.startsWith("http")
                             ? image.image_url
-                            : `http://localhost:5000${image.image_url}`
+                            : `https://rehabserver.onrender.com${image.image_url}`
                         }
                         alt={image.title || "Gallery image"}
                         width={800}

@@ -22,7 +22,7 @@ import { LucideIcon } from "lucide-react";
 // ✅ Fetch hero image from backend API
 async function getHeroImage() {
   try {
-    const res = await fetch("http://localhost:5000/hero", {
+    const res = await fetch("https://rehabserver.onrender.com/hero", {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch hero image");
@@ -53,7 +53,7 @@ export default async function Home() {
     name: t.patient_name,
     quote: t.message,
     imageUrl: t.photo_url
-      ? `http://localhost:5000${t.photo_url}`
+      ? `https://rehabserver.onrender.com${t.photo_url}`
       : "/placeholder-user.jpg",
     condition: t.condition || "",
     rating: t.rating || 0,
@@ -194,9 +194,7 @@ export default async function Home() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <CardDescription>
-                        {service.description}
-                      </CardDescription>
+                      <CardDescription>{service.description}</CardDescription>
                     </CardContent>
                     <div className="p-6 pt-0">
                       <Button
@@ -233,12 +231,19 @@ export default async function Home() {
                     ? Icons[reason.icon] || Icons.Star
                     : reason.icon;
                 return (
-                  <div key={reason.title} className="flex flex-col items-center">
+                  <div
+                    key={reason.title}
+                    className="flex flex-col items-center"
+                  >
                     <div className="bg-primary text-primary-foreground rounded-full p-4 mb-4">
                       <Icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-xl font-headline mb-2">{reason.title}</h3>
-                    <p className="text-muted-foreground">{reason.description}</p>
+                    <h3 className="text-xl font-headline mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {reason.description}
+                    </p>
                   </div>
                 );
               })}
@@ -258,9 +263,14 @@ export default async function Home() {
               </p>
             </div>
             {testimonials.length === 0 ? (
-              <p className="text-center text-muted-foreground">No testimonials available yet.</p>
+              <p className="text-center text-muted-foreground">
+                No testimonials available yet.
+              </p>
             ) : (
-              <Carousel opts={{ loop: true }} className="w-full max-w-4xl mx-auto">
+              <Carousel
+                opts={{ loop: true }}
+                className="w-full max-w-4xl mx-auto"
+              >
                 <CarouselContent>
                   {testimonials.map((testimonial: any, index: number) => (
                     <CarouselItem key={index}>
@@ -279,7 +289,9 @@ export default async function Home() {
                             <blockquote className="text-lg md:text-xl font-accent italic text-foreground mb-4">
                               "{testimonial.quote}"
                             </blockquote>
-                            <p className="font-bold text-primary">{testimonial.name}</p>
+                            <p className="font-bold text-primary">
+                              {testimonial.name}
+                            </p>
                             <p className="text-sm text-muted-foreground">
                               {testimonial.condition}
                             </p>
@@ -318,7 +330,7 @@ export default async function Home() {
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
-        </section>        
+        </section>
       </main>
     </div>
   );

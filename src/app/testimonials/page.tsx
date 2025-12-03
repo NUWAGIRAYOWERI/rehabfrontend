@@ -23,9 +23,12 @@ export default function TestimonialsPage() {
   useEffect(() => {
     async function fetchTestimonials() {
       try {
-        const res = await fetch("http://localhost:5000/testimonials", {
-          cache: "no-store", // ensure fresh data each time
-        });
+        const res = await fetch(
+          "https://rehabserver.onrender.com/testimonials",
+          {
+            cache: "no-store", // ensure fresh data each time
+          }
+        );
         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
         const data = await res.json();
@@ -36,7 +39,7 @@ export default function TestimonialsPage() {
           patient_name: t.patient_name,
           message: t.message,
           photo_url: t.photo_url
-            ? `http://localhost:5000${t.photo_url}` // prepend backend URL
+            ? `https://rehabserver.onrender.com${t.photo_url}` // prepend backend URL
             : "/placeholder-user.jpg", // fallback image
           rating: t.rating,
           status: t.status,
@@ -103,9 +106,7 @@ export default function TestimonialsPage() {
                       "{t.message}"
                     </blockquote>
                     <div>
-                      <p className="font-bold text-primary">
-                        {t.patient_name}
-                      </p>
+                      <p className="font-bold text-primary">{t.patient_name}</p>
                       {t.condition && (
                         <p className="text-sm text-muted-foreground">
                           {t.condition}
