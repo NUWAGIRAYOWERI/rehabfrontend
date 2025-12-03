@@ -12,6 +12,9 @@ type GalleryImage = {
   category?: string;
 };
 
+// ✅ Backend base URL
+const API_URL = "https://rehabserver.onrender.com";
+
 export default function GalleryPage() {
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +78,7 @@ export default function GalleryPage() {
                         src={
                           image.image_url.startsWith("http")
                             ? image.image_url
-                            : `https://rehabserver.onrender.com${image.image_url}`
+                            : `${API_URL}${image.image_url}`
                         }
                         alt={image.title || "Gallery image"}
                         width={800}
