@@ -45,7 +45,9 @@ export default async function ServicePage({
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12">
             <div className="lg:col-span-3">
-              <h2 className="text-3xl font-headline mb-4">About the Treatment</h2>
+              <h2 className="text-3xl font-headline mb-4">
+                About the Treatment
+              </h2>
               <p className="text-lg text-muted-foreground whitespace-pre-line">
                 {service.long_description}
               </p>
@@ -62,7 +64,7 @@ export default async function ServicePage({
               {service.image_url && (
                 <Card className="overflow-hidden shadow-lg">
                   <CardContent className="p-0">
-                    <Image
+                    <img
                       src={service.image_url}
                       alt={service.name}
                       width={800}
