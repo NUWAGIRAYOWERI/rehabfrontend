@@ -68,7 +68,7 @@ export default async function ServicePage({
                       src={
                         service.image_url.startsWith("http")
                           ? service.image_url
-                          : `${process.env.NEXT_PUBLIC_API_URL}${service.image_url}`
+                          : `${service.image_url}`
                       }
                       alt={service.name}
                       width={800}
