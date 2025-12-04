@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function TrackServiceVisit({ slug }: { slug: string }) {
   useEffect(() => {
     // Fire and forget request — log the view
-    fetch("http://localhost:5000/analytics/track-visit", {
+    fetch("https://rehabserver.onrender.com/analytics/track-visit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ serviceSlug: slug }),

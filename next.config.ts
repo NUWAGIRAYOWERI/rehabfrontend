@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
       },
       // ✅ Add your backend server here
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "rehabserver.onrender.com",
         port: "",
         pathname: "/uploads/**",
