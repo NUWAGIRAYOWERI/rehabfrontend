@@ -65,11 +65,7 @@ export default async function ServicePage({
                 <Card className="overflow-hidden shadow-lg">
                   <CardContent className="p-0">
                     <Image
-                      src={
-                        service.image_url.startsWith("http")
-                          ? service.image_url
-                          : `${service.image_url}`
-                      }
+                      src={service.image_url}
                       alt={service.name}
                       width={800}
                       height={600}
