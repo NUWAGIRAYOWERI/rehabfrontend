@@ -20,25 +20,23 @@ export default function TestimonialsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // ✅ form state
+  // ✅ Form state
   const [form, setForm] = useState({
     patient_name: "",
     message: "",
     rating: "",
     status: "approved",
   });
-
   const [file, setFile] = useState<File | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  // ✅ FETCH
+  // ✅ Fetch testimonials
   const fetchTestimonials = async () => {
     try {
       const res = await fetch("https://rehabserver.onrender.com/testimonials", {
         cache: "no-store",
       });
-
       if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
-
       const data = await res.json();
 
       const mapped: Testimonial[] = data.map((t: any) => ({
@@ -66,33 +64,35 @@ export default function TestimonialsPage() {
     fetchTestimonials();
   }, []);
 
-  // ✅ SUBMIT (UPLOAD)
-  const handleSubmit = async (e: any) => {
+  // ✅ Submit form
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
 
     const formData = new FormData();
     formData.append("patient_name", form.patient_name);
     formData.append("message", form.message);
-    formData.append("rating", form.rating);
+    formData.append("rating", form.rating ? String(Number(form.rating)) : "0");
     formData.append("status", form.status);
-
-    if (file) {
-      formData.append("photo", file); // MUST match multer
-    }
+    if (file) formData.append("photo", file);
 
     try {
       const res = await fetch(
         "https://rehabserver.onrender.com/testimonials/add",
-        {
-          method: "POST",
-          body: formData,
-        },
+        { method: "POST", body: formData },
       );
+
+      if (!res.ok) {
+        const errData = await res.json();
+        console.error("❌ Upload failed:", errData);
+        alert(errData.error || "Upload failed");
+        return;
+      }
 
       const data = await res.json();
       console.log("✅ Uploaded:", data);
 
-      // reset form
+      // Reset form
       setForm({
         patient_name: "",
         message: "",
@@ -101,10 +101,13 @@ export default function TestimonialsPage() {
       });
       setFile(null);
 
-      // refresh list
+      // Refresh list
       fetchTestimonials();
     } catch (err) {
       console.error("❌ Upload failed:", err);
+      alert("Upload failed. Check console for details.");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -117,7 +120,7 @@ export default function TestimonialsPage() {
         </div>
       </section>
 
-      {/* ✅ FORM */}
+      {/* Form */}
       <section className="py-10">
         <div className="container max-w-xl mx-auto">
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -153,8 +156,12 @@ export default function TestimonialsPage() {
               onChange={(e) => setFile(e.target.files?.[0] || null)}
             />
 
-            <button className="bg-primary text-white py-2 rounded">
-              Submit Testimonial
+            <button
+              type="submit"
+              disabled={submitting}
+              className="bg-primary text-white py-2 rounded"
+            >
+              {submitting ? "Submitting..." : "Submit Testimonial"}
             </button>
           </form>
         </div>
@@ -184,9 +191,7 @@ export default function TestimonialsPage() {
                     </div>
 
                     <p className="italic">"{t.message}"</p>
-
                     <p className="font-bold mt-2">{t.patient_name}</p>
-
                     {t.rating && <p>{"⭐".repeat(t.rating)}</p>}
                   </CardContent>
                 </Card>
